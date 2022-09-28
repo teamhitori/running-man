@@ -1,0 +1,11 @@
+{
+  "entryPoint": "./src/index.ts",
+  "fillScreen": true,
+  "gameName": "running man",
+  "screenRatio": "1",
+  "gameThumbnail": "logo.jpg",
+  "webPort": "8080",
+  "serverDir": "server",
+  "clientDir": "web",
+  "remoteHost": "running-man.azurewebsites.net"
+}

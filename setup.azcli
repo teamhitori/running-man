@@ -1,0 +1,19 @@
+#config
+$appname = "running-man"
+$appnameShort = "runningman"
+$location = "UK South"
+
+az login
+
+# build
+frakas build
+
+# deploy
+az group create -n $appname --location $location
+
+cd "server"
+az webapp up --sku F1 --name $appname -g $appname
+
+az storage blob upload-batch --account-name $appnameShort -s "web" -d '$web' --overwrite
+az storage blob service-properties update --account-name "$appnameShort" --static-website --404-document index.html --index-document index.html
+az storage account create -n "$appnameShort" -g $appname -l "UK South" --sku Standard_LRS
