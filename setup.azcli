@@ -9,11 +9,11 @@ az login
 frakas build
 
 # deploy
-az group create -n $appname --location $location
+az group create -n $appname -l $location
 
 cd "server"
 az webapp up --sku F1 --name $appname -g $appname
 
-az storage blob upload-batch --account-name $appnameShort -s "web" -d '$web' --overwrite
+az storage blob upload-batch --account-name $appnameShort -s "server/web" -d '$web' --overwrite
 az storage blob service-properties update --account-name "$appnameShort" --static-website --404-document index.html --index-document index.html
-az storage account create -n "$appnameShort" -g $appname -l "UK South" --sku Standard_LRS
+az storage account create -n "$appnameShort" -g $appname -l $location --sku Standard_LRS

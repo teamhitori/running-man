@@ -15,8 +15,6 @@ createFrontend(async api => {
 }, { loglevel: LogLevel.info });
 
 
-
-
 // Create backend and receive api for calling frontend
 createBackend(api => {
     new babylonSceneServer(api);

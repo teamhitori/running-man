@@ -10,7 +10,7 @@ const config = JSON.parse(configRaw);
 
 // Overrides
 config.serverDir = config.serverDir ?? "server";
-config.clientDir = config.clientDir ?? `${config.serverDir}/public`
+config.clientDir = config.clientDir ?? `public`
 
 console.log("frakas.json: ", config)
 
@@ -78,7 +78,7 @@ var clientConfig = {
     output: {
         globalObject: 'self',
         filename: '[name].js',
-        path: path.resolve(__dirname, config.clientDir)
+        path: path.resolve(__dirname, config.serverDir, config.clientDir)
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'Custom template',
