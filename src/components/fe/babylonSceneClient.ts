@@ -57,6 +57,7 @@ export class babylonSceneClient {
     constructor(private _api: IFrontendApi) {
 
         // Babylonjs render loop
+        this._engine.loadingScreen.displayLoadingUI();
         this._engine.runRenderLoop(() => {
             this._gameLoop.next();
             this._activeScene?.render();
@@ -209,9 +210,7 @@ export class babylonSceneClient {
                         this._guiGame!!.dialogTextPanel.container.isVisible = true;
                     } else {
                         this._guiGame!!.dialogTextPanel.container.isVisible = false;
-
                     }
-
 
                     updatePlayersPanel(this._guiGame!!, snapshot);
 
@@ -343,6 +342,8 @@ export class babylonSceneClient {
             SceneLoader.LoadAssetContainer(`${this._api.assetsRoot}/`, "running-man.glb", scene, (container) => {
 
                 container.addAllToScene();
+
+                this._engine.loadingScreen.hideLoadingUI();
 
                 resolve(container);
             });

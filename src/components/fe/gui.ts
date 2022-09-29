@@ -503,7 +503,7 @@ export function updateWaitingPlayers(gui: gui, event: updateWaitingEvent, isCrea
     if (event.players.length >= 2) {
 
         gui.waitingPanel.textMessage.color = "#00FF00FF";
-        gui.waitingPanel.textMessage.text = "QUORUM!"
+        gui.waitingPanel.textMessage.text = "READY!!"
 
         if (isCreator) {
             gui.waitingPanel.buttonStart.isVisible = true;

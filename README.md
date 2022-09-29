@@ -1,8 +1,8 @@
 # <img src="https://raw.githubusercontent.com/teamhitori/running-man/main/assets/running-man.gif" height="200">
  
-> Running Man demo game using [Frakas](https://github.com/teamhitori/frakas)
+> Running Man multiplayer demo game using [Frakas](https://github.com/teamhitori/frakas)
 
-[>> LIVE DEMO <<](https://running-man.azureedge.net/)
+[RUNNING MAN DEMO](https://running-man.azureedge.net/)
 
 ## Run locally
 
@@ -10,8 +10,6 @@
 
 - Install [Node.js] which includes [Node Package Manager][npm]
 - Install Typescript
-
-```
 
 ### Usage
 

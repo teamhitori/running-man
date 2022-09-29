@@ -7,7 +7,6 @@ import { babylonSceneServer } from './components/be/babylonSceneServer';
 import { babylonSceneClient } from './components/fe/babylonSceneClient';
 
 // Think twice before creating global variables, frontend state cannot see backend, and vice versa.
-
 createFrontend(async api => {
     var client = new babylonSceneClient(api);
 
